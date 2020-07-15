@@ -1,13 +1,32 @@
-import React from 'react';
+import React, { Component, createContext } from 'react'
+import { BrowserRouter as Router, Route, Link} from 'react-router-dom'
+import { Index } from './index'
+import { About }  from './about'
+import { UserContext } from './UserContext'
 
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
 
-    </div>
-  );
+function NewRouter () {
+  return(
+    <Router>
+      <>
+      <nav>
+        <ul>
+          <li>
+            <Link to ='/' > Home </Link>
+          </li>
+          <li>
+            <Link to ='/about/' > About </Link>
+          </li>
+        </ul>
+      </nav>
+      <UserContext.Provider>
+        <Route path='/' exact component={Index} />
+        <Route path='/about/' exact component={About} />
+   
+      </UserContext.Provider>
+      </>
+      
+    </Router>
+  )
 }
-
-export default App;
