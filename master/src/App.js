@@ -20,7 +20,7 @@ function NewRouter () {
           </li>
         </ul>
       </nav>
-      <UserContext.Provider>
+      <UserContext.Provider value='new user'>
         <Route path='/' exact component={Index} />
         <Route path='/about/' exact component={About} />
    
